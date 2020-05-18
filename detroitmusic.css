@@ -6,31 +6,24 @@
 body {
 	margin: 0;
 	background-color: #000;
-	background-image: url("Assets/Detroit-top-image-md.jpg");
+	background-image: url("Assets/Detroit-top-image-xs.jpg");
 	background-repeat: no-repeat;
+	height: 100%;
+	object-fit: cover;
 }
 
-.container {  
-	width: 100%;
-	height: 800px;
+.container-fluid {  
+	box-sizing: border-box;
+	height: 1200px;
 	padding: 0px;
+	width: 100%;
 }
 
-@media (min-width: 768px) {
-	body {
-		background-image: url("Assets/Detroit-top-image-lg.jpg");
-	}
-
-	.navList {
-		padding-top: 4em;
-	}
-	
-}
 
 .mainNav {
-	padding-top: 21.75rem;
+	padding-top: 17rem;
 	width: 100%;
-	height: 2.5em;
+	height: 200px;
 	text-decoration: none;
 	list-style: none;
 	float: left;
@@ -62,16 +55,17 @@ body {
 	color: #fca306;
 	padding-left: 1.5em;
 	list-style-type: none;
+	font-size: .95em;
 	
 }
-
+/*Help/Tutorial from https://codepen.io/erikterwan/pen/EVzeRP -- Erik Terwan/codepen. Modified for my website.
 /*Hamburger Menu styles*/
 #hamburger
 {
   display: block;
   position: relative;
-  top: 488px;
-  left: 575px;
+  top: 247px;
+  left: 345px;
   z-index: 1;
   
   -webkit-user-select: none;
@@ -98,7 +92,7 @@ body {
   width: 40px;
   height: 30px;
   position: absolute;
-  top: -30px;
+  top: -10px;
   left: -70px;
   
   cursor: pointer;
@@ -120,7 +114,7 @@ body {
   margin-bottom: 5px;
   position: relative;
   left: -70px;
-  top: -30px;
+  top: -5px;
 
   
   background: #fca306;
@@ -176,7 +170,7 @@ body {
 #menu
 {
   position: absolute;
-  width: 250px;
+  width: 150px;
   height: 400px;
   padding: 30px;
   padding-top: 35px;
@@ -203,7 +197,7 @@ body {
 
 
 /*
- Toggle hamburger menu on and off
+ Toggle hamburger menu on and off. Hamburger will show devices 576px and smaller.
  */
 #hamburger input:checked ~ ul 
 {
@@ -227,51 +221,266 @@ body {
 
 }
 
-#contentWrapper {
-	width: 960px;
-	height: auto;
-	padding-bottom: 100px;
-	padding-top: 30px;
-	background-image: url(Assets/background.jpg);
-	background-repeat: repeat-x;	
+@media (min-width: 375px) {
+	#hamburger {
+		left: 375px;
+	}
 }
 
-#textBox {
-	width: 600px;
-	height: 970px;
-	padding-left: 180px;
-	padding-right: 180px;
-	padding-top: 30px;
-	background-image: -moz-linear-gradient (#666, #333);
-	background-repeat: repeat-x;
-    border-radius: 15px;
+@media (min-width: 425px){
+	#hamburger {
+		left: 400px;
+	}
 }
 
-h1 {
-	background-color: url(Assets/textbox.jpg);
+
+
+.textBox {
+	width: 360px;
+	height: 800px;
+	overflow-y: scroll;
+	margin-bottom: 50px;
+}
+
+h2 {
 	color: #fca306;
+	height: 25px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding-top: 50px;
 	text-align: center;
-	padding-bottom: 20px;
+}
+
+h5 {
+	display: block;
+	padding-top: 50px;
+	text-align: left;
+	color: #ffffff;
+	margin-left: 5%;
+	margin-right: 5%;
+
 }
 
 p {
-	display: block;
-	padding: 6px;
-	margin-left: 50px;
-	margin-right: 50px;
-	text-align: justify;
-	color: #fdce7c;
-
+		display: block;
+		padding: 6px;
+		margin-left: 5%;
+		margin-right: 5%;
+		text-align: justify;
+		color: #ffffff;
+		float: left;
+	
 }
 
 
 footer {
-	width: 960px;
-	height: 75px;
-	padding-top: 50px;
+	width: 100%;
+	height: 150px;
+	padding-bottom: 150px;
+	margin-bottom: 0em;
 	background-color: #fca306;
 	text-align: center;
-	font-size: 12px;
-	margin-top: 50px;
+	font-size: .75rem;
 	clear: both;
+}
+.footerheadings {
+	padding-top: 25px;
+}
+.footerheadings p {
+	color: #000000;
+	font-size: .75em;
+	text-align: left;
+	width: 200px;
+	height: 20px;
+	margin-left: 25px;
+	margin-bottom: 2px;
+	padding: 2px;
+}
+
+.footerheadings ul {
+	width: 350px;
+	height: 25px;
+	float: left;
+	padding-left: 25px;
+}
+
+.footerheadings li {
+	width: auto;
+	list-style-type: none;
+	display: inline;
+	float: left
+}
+
+.footerheadings a {
+	display: block;
+	padding: 2px;
+	color: #000;
+	padding-top: 25px;
+
+}
+
+.footerheadings a:visited {
+	color: #90c;
+}
+
+/*Responsive styles here. Media queries for medium, large and xl device widths*/
+/*Adjust text box width - Mobile Lg 425px - Default style is Mobile medium 375px*/
+@media (min-width: 425px) {
+	.textBox {
+		width: 425px;
+		height: 800px;
+		overflow-y: scroll;
+		margin-right: auto;
+	}
+
+	h5, p {
+		margin-left: 8%;
+		margin-right: 8%;
+	}
+
+/*Small Devices - 576px - 767px*/
+
+@media (min-width: 577px) {
+	.mainNav {
+		padding-top: 24rem;
+	}
+
+	body {
+		background-image: url("Assets/Detroit-top-image-sm.jpg");
+	}
+
+	.textBox {
+		padding-top: 520px;
+	}
+
+
+}
+
+/*Medium Devices - 768 - 991px*/
+@media (min-width: 768px) {
+
+	.mainNav { 
+		height: 500px;
+		padding-top: 24.25rem;
+	}
+
+	.navList li {
+		font-size: .75em;
+	}
+	
+	body {
+		background-image: url("Assets/Detroit-top-image-md1.jpg");
+	}
+
+	.textBox {
+		width: 590px;
+		padding-top: 25px;
+		padding-right: 25px;
+		overflow-y: scroll;
+		
+	}
+	
+	h2 {
+		width: 300px;
+		padding-top: 25px;
+		margin-left: 22.5%;
+	}
+	
+	h5, p {
+		margin-left: 5%;
+		margin-right: 5%;
+
+	}
+
+	.footerheadings p{
+		font-size: 1em;
+		width: 700px;
+		margin-left: 35px;
+		display: block;
+	}
+	
+	.footerheadings ul {
+		width: 350px;
+		height: 25px;
+		float: left;
+		padding-left: 35px;
+	}
+	
+	.footerheadings li {
+		width: auto;
+		list-style-type: none;
+		display: inline;
+		float: left
+	}
+	
+	.footerheadings a {
+		display: block;
+		padding: 2px;
+		color: #000;
+		padding-top: 25px;
+	
+	}
+	
+}
+
+/* Large Devices - 992px - 1199px */
+@media (min-width: 992px) {
+	body {
+		background-image: url("Assets/Detroit-top-image-lg.jpg");
+		background-repeat: no-repeat;
+	}
+	.mainNav {
+		height: 661px;
+		padding-top: 31.25rem;
+	}
+	.navList li {
+		font-size: 1em;
+	}
+
+	.textBox {
+		width: 720px;
+		height: 1000px;
+		overflow-y: scroll;
+		margin-right: auto;
+	}
+
+}
+
+/*Xl devices - 1200px and above*/
+
+@media (min-width: 1200px) {
+	body {
+		background-image: url("Assets/Detroit-top-image-xl.jpg");
+	}
+
+	.mainNav {
+		height: 800px;
+		padding-top: 38rem;
+	}
+
+	.container {
+		height: 1280px;
+	}
+
+
+	.navList li {
+		font-size: 1.2em;
+	}
+
+	.textBox {
+		width: 900px;
+	}
+
+	h2 {
+		margin-left: 33%;
+	}
+
+	.footerheadings p {
+		width: 700px;
+	}
+
+	.footerheadings ul {
+		width: 900px;
+	}
+
+	
 }
