@@ -12,11 +12,10 @@ body {
 	background-color: #000;
 }
 
-.container-fluid {  
+.container {  
+	height: 800px;
 	box-sizing: border-box;
-	height: 1150px;
 	padding: 0px;
-	width: 100%;
 }
 
 /*On Home page, logo is fixed to top images. On content pages, logo is placed separately for label to change.*/
@@ -39,15 +38,54 @@ body {
 }
 
 
-.mainNav {
-	padding-top: 1rem;
+#contentBox {
 	width: 100%;
-	height: 75px;
+	height: 660px;
+	overflow-y: scroll;
+	padding-left: 40px;
+}
+
+/*Help/Tutorial from Yaakov Chaikin, Coursera Ruby on Rails course 4: HTML, CSS and JS*/
+section.row {
+	height: 200px;
+	width: 100%;
+	position: relative;
+  }
+
+.genre-tile {
+	  width: 200px;
+	  height: 200px;
+	  margin-bottom: 25px;
+	  margin-right: 10px;
+	  border: 2px solid #ffffff; 
+	  position: relative;
+	  overflow: hidden;
+  }
+
+.genre-tile:hover {
+	box-shadow: 0 1px 5px 1px #fff;
+  }
+
+.genre-label span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	color: #fca306;
+  }
+
+.mainNav {
+	width: 100%;
+	height: 68px;
 	text-decoration: none;
 	list-style: none;
 	float: left;
 	color: #fca306;
 	visibility: hidden;
+	padding-bottom: 80px;
 }
 
 .mainNav a {
@@ -72,7 +110,7 @@ body {
 	float: left;
 	font-family: Verdana, Geneva, sans-serif;
 	color: #fca306;
-	padding-left: 1.5em;
+	padding-left: 1em;
 	list-style-type: none;
 	font-size: .95em;
 	
@@ -111,8 +149,8 @@ body {
   width: 40px;
   height: 30px;
   position: absolute;
-  top: -10px;
-  left: -50px;
+  top: -5px;
+  left: -70px;
   
   cursor: pointer;
   
@@ -132,7 +170,7 @@ body {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  left: -40px;
+  left: -70px;
   top: 0px;
 
   
@@ -229,57 +267,20 @@ body {
 }
 
 /*media query to show nav list on larger devices. Navbar hidden on xs. Hamburger icon/dropdown*/
+
 @media (min-width: 577px) {
+
 	#hamburger, #menu {
 		visibility: hidden;
 	}
 
 	.mainNav {
         visibility: visible;
-	}
-
+    }
 }
 
-
-.textBox {
-	width: 100%;
-	height: 1200px;
-	overflow-y: hidden;
-	margin-bottom: 50px;
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-h2 {
-	color: #fca306;
-	height: 25px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	padding-bottom: 20px;
-	text-align: center;
-}
-
-h5 {
-	display: block;
-	padding-top: 50px;
-	text-align: left;
-	color: #ffffff;
-	margin-left: 5%;
-	margin-right: 10%;
-
-}
-
-p {
-		display: block;
-		margin-left: 5%;
-		margin-right: 10%;
-		text-align: justify;
-		color: #ffffff;
-		float: left;
-	
-}
-
-
-footer {
+/*Footer styles/bottom of page, page links */
+#footer {
 	width: 100%;
 	height: 150px;
 	padding-bottom: 150px;
@@ -289,16 +290,18 @@ footer {
 	font-size: .75rem;
 	clear: both;
 }
+
 .footerheadings {
 	padding-top: 25px;
 }
+
 .footerheadings p {
 	color: #000000;
 	font-size: .75em;
 	text-align: left;
 	width: 200px;
 	height: 20px;
-	margin-left: 15px;
+	margin-left: 25px;
 	margin-bottom: 2px;
 	padding: 2px;
 }
@@ -311,11 +314,11 @@ footer {
 }
 
 .footerheadings li {
+	width: auto;
 	list-style-type: none;
 	display: inline;
 	float: left;
-	font-size: .70em;
-
+	font-size: .90em;
 }
 
 .footerheadings a {
@@ -331,219 +334,255 @@ footer {
 }
 
 /*Responsive styles here. Media queries for medium, large and xl device widths*/
-/*Adjust text box width - Mobile Lg 425px - Default style is Mobile small 320px*/
-/*Mobile Medium 375px*/
+/*Mobile Medium 375px - Default style is Mobile small 320px*/
+
 @media (min-width: 375px) {
-	#hamburger {
-	top: 15px;
-    left: 375px;
+
+	.mainNav {
+		padding-bottom: 120px;
 	}
 
-	.textBox {
-	width: 100%;
-	height: 875px;
-	margin-bottom: 50px;
+	#hamburger {
+		top: 15px;
+		left: 374px;
 	}
+  
+  #hamburger input {
+	  left: -100px;
+  }
+  
+  #hamburger span {
+	  left: -100px;
+	  top: -2px; 
+  }
+  
+  #genre-tile {
+	  width: 300px;
+	  height: 300px;
+	  }
+
+	#contentBox {
+		padding-left: 70px;
+	} 
+  
+}
+
+/* Mobile Large - 425px*/
+
+@media (min-width: 425px) {
+	#hamburger {
+		top: 20px;
+		left: 420px;
+		}
 
 	#hamburger input {
-		left: -70px;	
+		top: -20px;
 	}
 
 	#hamburger span {
-		left: -65px;	
+		top: -8px;
 	}
 
-	h2 {
-		margin-top: 20px;
+	.mainNav {
+		padding-bottom: 100px;
 	}
 
-	h5 {
-		margin-bottom: 15px; 
+	#contentBox {
+		padding-left: 90px;
 	}
+
+	
 	
 }
+/*Medium Devices - Tablet Default values are for small mobile*/
+@media (min-width: 577px) {
 
-@media (min-width: 425px){
-	#hamburger {
-		top: 20px;
-		left: 425px;
-		}
-
-	h2 {
-		padding-top: 15px;
-
+.logobox {
+	padding-top: 50%; 
 	}
 
-	.footerheadings ul {
-	  font-size: .90em;
-	  padding-left: 8%;
-	}
+.mainNav {
+	padding-bottom: 150px;
+}
 
-	.footerheadings li {
-		font-size: 1em;
-	}
-
-	.footerheadings p {
-	  padding-left: 5%;
-	}
-
-	.textBox {
-		width: 100%;
-	}
+.navList li {
+	font-size: .75em;
 }
 
 
+.genre-tile {
+	overflow: hidden;
+	margin-right: 0px;
+}
 
-/*Small Devices - 576px - 767px*/
+#contentBox {
+	padding-left: 5%;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	height: 450px;
+}
 
-@media (min-width: 577px) {
+.container {
+	height: 600px;
+	max-width: 576px;
+}
 
-	.logobox {
-		left: -5%;
+section.row {
+	width: 80%;
+	height: 300px;
+	position: relative;
+  }
+
+}
+
+/* Devices - 768 - 991px*/
+@media (min-width: 768px) {
+
+	.container {
+		height: 1050px; 
+		margin: 0%;
+		max-width: 991px;
+	}
+
+	#contentBox {
+		height: 910px;
+		padding-left: 0px;
+		margin-left: 15px;
+	}
+
+	.genre-label img {
+		width: 250px; 
+		height: 250px;
+	}
+
+	.genre-tile {
+		width: 250px;
+		height: 250px;
+	}
+
+	section.row {
+		width: 75%;
+		padding: 0;
+	}
+
+	#contentBox {
+		margin-left: 3%;
 	}
 
 	.mainNav { 
-		padding-top: 24.5rem;
-	}
-	.mainNav {
-		padding-top: 0rem;
-		padding-left: 25px;
-	}
-
-	.logobox {
-	 padding-top: 49.5%;
-	}
-	
-	.textBox {
-		margin-top: 125px;
-	}
-
-	.logobox img {
-		left: 0%;
+		height: 120px;
+		padding-top: -7rem;
+		padding-bottom: 175px;
 	}
 
 	.navList li {
-		font-size: 1em;
+		font-size: .95em;
+		padding-top: .20em;
 	}
 
-	footer {
-		width: 100%;
-		height: 200px;
-		padding-bottom: 150px;
-		margin-bottom: 0em;
+	.logobox {
+		width: 90%;
 	}
-
-	.footerheadings p {
-		width: 577px;
-		padding-left: 35px;
-	}
-
-	.footerheadings ul {
-		margin-left: 5px;
-		width: 577px;
+	
+	.logobox img {
+		top: -8%;
+		left: -7%;
+		width: 55%;
 	}
 
 	.footerheadings li {
-		font-size: 1.5em;
-		padding-right: 2px;
+		font-size: 1.50em;
+		padding-right: 10px;
 	}
 
-
-}
-
-/*Medium Devices - 768 - 991px*/
-@media (min-width: 768px) {
-
-
-	.logobox {
-	  left: 0%;
-	  top: -15%;
-	  padding-top: 50%;
+	.footerheadings ul {
+		width: 500px;
+		padding-left: 25px;
 	}
 
-	.navList {
-		margin-left: 35px;
-	}
-
-	.navList li {
-		font-size: .90em;
-	}
-
-	.textBox {
-		padding-top: 25px;
-		margin-left: 2%;
-		margin-right: 2%;
-		
-	}
-	
-	h2 {
-		padding-top: 25px;
-	}
-	
-	h5, p {
-		margin-left: 5%;
-		margin-right: 5%;
-
-	}
-
-	.footerheadings p {
-		font-size: 1em;
-		width: 700px;
-		margin-left: 35px;
-		display: block;
-	}
-	
 }
 
 /* Large Devices - 992px - 1199px */
 @media (min-width: 992px) {
 
-	.logobox img {
-		width: 45%;
+	.logobox {
+		width: 90%;
+		padding-top: 45%;
 	}
-
-	.mainNav {
-		height: 100px;
-		padding-top: .25rem;
-	} 
-
-	.navList li {
-		font-size: .95em;
-	}
-
-	.textBox {
-		height: 1000px;
-	}
-
-	.footerheadings p {
-		margin-left: 50px;
-	}
-
-}
-
-/*Xl devices - 1200px and above*/
-
-@media (min-width: 1200px) {
 
 	.logobox img {
-		width: 40%;
+		top: -15%;
 	}
-
+	
 	.mainNav {
-		height: 100px;
-		padding-top: .75rem;
-	}
-
-	.container {
-		height: 1280px;
+		height: 75px;
+		padding-top: 2rem;
+		padding-left: 5%;
 	}
 
 	.navList li {
 		font-size: 1.2em;
 	}
 
+	.container {
+		height: 825px;
+		width: 100%;
+		padding-top: 1rem;
+	}
+
+	#contentBox {
+		height: 575px; 
+		padding-left: 5px;
+		padding-top: 25px;
+		margin-left: 8%;
+	}
+
+	section.row {
+		width: 87%;
+		padding-left: 0px; 
+	}
+}
+
+/*Xl devices - 1200px and above*/
+
+@media (min-width: 1200px) {
+
+	.logobox {
+		width: 80%;
+	}
+
+	.logobox img {
+		top: -10%;
+	}
+
+	.mainNav {
+		height: 100px;
+	}
+
+	.container {
+		height: 1000px;
+		padding-top: 3rem;
+		max-width: 120%;
+	}
+
+	section.row {
+		width: 97%;
+		
+	}
+
+	#contentBox {
+		margin-left: 4%;
+		padding-top: 7rem;
+		height: 675px;
+	}
+
+
+	.navList li {
+		font-size: 1.2em;
+	}
+
 	.textBox {
-		margin-top: 200px;
+		width: 900px;
 	}
 
 	.footerheadings p {
@@ -552,34 +591,7 @@ footer {
 
 	.footerheadings ul {
 		width: 900px;
-		padding-left: 75px;
 	}
 
 	
-}
-
-@media (min-width: 2560px) {
-	.navList {
-		padding-left: 2%;
-	}
-
-	.navList li {
-		font-size: 2em;
-	}
-
-	.textBox {
-		padding-top: 300px;
-	}
-
-	.footerheadings p {
-		width: 100%;
-	}
-
-	h2 {
-		font-size-adjust: inherit;
-	}
-
-	h5, p {
-		margin-left: 0;
-	}
 }
